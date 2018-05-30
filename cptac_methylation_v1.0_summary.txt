@@ -1,0 +1,24 @@
+CPTAC methylation array analysis summary: 
+
+The methylation analysis was performed using the cross-package workflow
+“methylationArrayAnalysis”
+(https://master.bioconductor.org/packages/release/workflows/html/
+methylationArrayAnalysis.html) available on Bioconductor. In brief, the raw
+data files (IDAT files) were processed to obtain the methylated (M) and
+unmethylated (U) signal intensities for each locus. The processing step
+included an unsupervised normalization step called functional normalization
+that has been previously implemented for Illumina 450K methylation arrays
+(Fortin, JP, Aurélie Labbe, Mathieu Lemire, and BW Zanke. 2014. “Functional
+normalization of 450k methylation array data improves replication in large
+cancer studies.” Genome Biology 15 (503):1–17). A detection p value was also
+calculated for each locus, and this p value captured the quality of detection
+at the locus with respect to negative control background probes included in the
+array. Loci having common SNPs (with MAF > 0.01), as per dbSNP build 132
+through 147 via the UCSC snp132common track through snp147common track, were
+removed from further analysis. Beta values were calculated as M/(M+U), that is
+equal to the fraction methylated for each locus. Beta values of loci whose
+detection p values were > 0.01 were assigned NA in the output file. All loci
+are annotated with the annotation information from
+‘MethylationEPIC_v-1-0_B2.csv’ from the zip archive
+‘infinium-methylationepic-v1-0-b2-manifest-file-csv.zip’ from www.illumina.com.
+
