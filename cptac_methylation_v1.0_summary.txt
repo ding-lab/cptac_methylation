@@ -21,4 +21,4 @@ detection p values were > 0.01 were assigned NA in the output file. All loci
 are annotated with the annotation information from
 ‘MethylationEPIC_v-1-0_B2.csv’ from the zip archive
 ‘infinium-methylationepic-v1-0-b2-manifest-file-csv.zip’ from www.illumina.com.
-
+The scripts associated with data processing are available on github: https://github.com/ding-lab/cptac_methylation.
