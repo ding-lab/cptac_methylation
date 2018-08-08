@@ -1,7 +1,7 @@
-### CPTAC Methylation analysis
+CPTAC Methylation analysis
+==========================
 
-Sunantha Sethuraman
-===================
+### Sunantha Sethuraman
 
 ------------------------------------------------------------------------
 
