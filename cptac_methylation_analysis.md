@@ -1,7 +1,9 @@
 CPTAC Methylation analysis
 ==========================
 
-### Sunantha Sethuraman
+### github: <https://github.com/ding-lab/cptac_methylation>
+
+#### Sunantha Sethuraman
 
 ------------------------------------------------------------------------
 
@@ -36,8 +38,8 @@ IlluminaHumanMethylationEPICanno.ilm10b2.hg19 package on Bioconductor.
 
 ------------------------------------------------------------------------
 
-Data with hg19 annotaion
-------------------------
+Data with hg19 annotation
+-------------------------
 
 During the initial analysis, **annotation steps used hg19 coordinates**
 (Bioconductor package:IlluminaHumanMethylationEPICanno.ilm10b2.hg19).
@@ -72,3 +74,30 @@ possible that some of the annotations (for example: DNase
 hypersensitivity sites, CpG islands) might no longer hold true in hg38.
 
 ------------------------------------------------------------------------
+
+Sample nomenclature
+-------------------
+
+The samples follow the naming system "\[SubjectID\].\[T or N\].csv",
+where T or N specifies whether it is a tumor or a normal sample (for
+example: C3N\_01375.T.csv). In a few cases, where this information was
+unavailable or unclear, the samples are named as
+"\[SampleID\].\[AliquotNumber\].csv", where SampleID is a unique
+identifier of the sample and the AliquotNumber is the aliquot which was
+processed for the methylation array (for example: CPT0018570006.2.csv).
+In most cases, the AliquotNumber is 2. Those samples which are labeled
+"NA12878" are controls where DNA from the cell line NA12878 was used.
+
+------------------------------------------------------------------------
+
+Data by cancer type
+-------------------
+
+Data with hg19 annotation was uploaded batch-wise (see links above).
+Data with hg38 annotation was uploaded by cancer type for UCEC and CCRC.
+There were 3 UCEC cases ("C3L\_01925", "C3N\_01346", "C3N\_01349") for
+which the methylation data was unavailable. There were no such missing
+cases for CCRC. For more information about the available files, their
+sizes and md5 sums, refer to the manifest files
+(Methylation\_UCEC\_hg38\_manifest.txt and
+Methylation\_CCRC\_hg38\_manifest.txt)
