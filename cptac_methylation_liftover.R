@@ -19,11 +19,11 @@ if (length(args)==0) {
 ###----Create a new directory-------------------------------------------------------------
 
 WORKDIR <- args[1]
-dir.create(file.path(WORKDIR, "../Processed_hg38"))
+dir.create(file.path(WORKDIR, "../Processed_hg38_remap"))
 
 ###----Read in hg38 annotation -----------------------------------------------------------
 
-ann <- read.csv("/diskmnt/Projects/Users/ssethura/cptac_methylation/annotation_liftedOver_hg38.txt", stringsAsFactors=F, sep= "\t")
+ann <- read.csv("/diskmnt/Projects/Users/wliang/Methylome_CPTAC/04_Pipeline/00_Scripts/annotation_remap_hg38.txt", stringsAsFactors=F, sep= "\t")
 
 ###----Change annotation information for all output files --------------------------------
 
@@ -32,9 +32,8 @@ filenames <- filenames[filenames != "Probewise_pValues.csv"] # Remove the only n
 
 for(filename in filenames) {
 	temp <- read.csv(paste0(WORKDIR, "/", filename), stringsAsFactors=F)
-	col_order <- colnames(temp)
+	col_order <- colnames(ann)
 	temp <- temp[,c("Locus", "Beta")]
 	temp <- merge(temp, ann, by= "Locus")
-	temp <- temp[,col_order]
-	write.csv(temp, paste0(WORKDIR, "/../Processed_hg38/", filename), row.names=F)
+	write.csv(temp, paste0(WORKDIR, "/../Processed_hg38_remap/", filename), row.names=F)
 	}
