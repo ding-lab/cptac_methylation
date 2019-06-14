@@ -19,11 +19,13 @@ ori.columns = ['Locus', 'Name', 'Probe_rs', 'Probe_maf',
 
 
 ## Read in InfiniumAnnotation
+## Downloaded from http://zwdzwd.io/InfiniumAnnotation/current/EPIC/EPIC.hg38.manifest.tsv.gz
 new = pd.read_csv("./anno/EPIC.hg38.manifest.tsv.gz", sep="\t", dtype=str)
 new_keep = ["CpG_chrm", "CpG_beg", "CpG_end", "probe_strand", "probeID", "gene", "gene_HGNC", "mapQ_A", "mapQ_B", "MASK_mapping", "MASK_typeINextBaseSwitch", "MASK_sub30_copy", "MASK_extBase", "MASK_snp5_GMAF1p", "MASK_general"]
 new = new[new_keep]
 
 ## Read in InfiniumAnnotation-GencodeV22
+## Downloaded from http://zwdzwd.io/InfiniumAnnotation/current/EPIC/EPIC.hg38.manifest.gencode.v22.tsv.gz
 gencode = pd.read_csv("./anno/EPIC.hg38.manifest.gencode.v22.tsv.gz", sep="\t", dtype=str)
 gencode_drop = ["CpG_chrm", "CpG_beg", "CpG_end", "probe_strand"]
 gencode = gencode.drop(gencode_drop, axis=1)
