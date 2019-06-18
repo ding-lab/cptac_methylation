@@ -4,6 +4,16 @@ CPTAC Methylation analysis
 #### Author: Sunantha Sethuraman
 #### Author: Wen-Wei Liang
 
+Release
+--------------
+
+*Jun 19, 2019* Version 1.1 released.
+        - Reannotated probe by `InfiniumAnnotation` (Ref 2).
+        - Improved filenaming: Adjacent normal were named as .A. Blood normal were named as .N.
+        - Improved filenaming: Unique aliquout ID were added.
+*May 30, 2018* Version 1.0 released.
+        - Probe annotation were liftover to hg38
+
 
 Processing description
 ----------------------

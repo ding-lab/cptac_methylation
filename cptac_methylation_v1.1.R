@@ -14,6 +14,8 @@ library(stringr)
 
 ## ----Process arguments---------------------------------------------
 
+## usage: Rscript cptac_methylation_v1.0.R <input dir>
+
 args = commandArgs(trailingOnly=TRUE)
 
 if (length(args)==0) {
@@ -92,13 +94,11 @@ for (i in 1:ncol(bVals)) {
 	temp <- merge(temp, annEPICSub, by="row.names")
 	colnames(temp)[1:2] <- c("Locus", "Beta")
 	index <- which(targets$Sample_ID == colnames(bVals)[i])
-	if (is.na(targets$Sample_type[index])) {
-		targets$Subject_ID[index] <- strsplit(targets$Sample_ID[index], "_")[[1]][1]
-		status <- strsplit(targets$Sample_ID[index], "_")[[1]][2]
-		} else if (targets$Sample_type[index] == "tumor") {
-		status = "T"} else if(targets$Sample_type[index] == "normal") {
-		status = "N"}
-	write.csv(temp, paste0(WORKDIR, "/Processed/", targets$Subject_ID[index],".", status, ".csv"), row.names=F)
+	if (targets$Sample_type[index] == "tumor") {
+		status = "T"} else if(targets$Sample_type[index] == "blood_normal") {
+		status = "N"} else if (targets$Sample_type[index] == "tissue_normal") {
+                status = "A"}
+	write.csv(temp, paste0(WORKDIR, "/Processed/", targets$Subject_ID[index],".", status, ".", targets$Sample_ID ,".csv"), row.names=F)
 	}
 
 write.csv(detP, paste0(WORKDIR, "/Processed/", "Probewise_pValues.csv"))
