@@ -9,7 +9,7 @@ Release
 
 *Jun 19, 2019:* Version 1.1 released.
 - Reannotated probe by `InfiniumAnnotation` (Ref 2).
-- Improved filenaming: Adjacent normal were named as .A. Blood normal were named as .N.
+- Improved filenaming: Adjacent normal were named as `.A`. Blood normal were named as `.N`.
 - Improved filenaming: Unique sample ID were added.
 
 *May 30, 2018:* Version 1.0 released.
@@ -36,7 +36,7 @@ analysis. Beta values were calculated as `M/(M+U)`, that is equal to the
 fraction methylated for each locus. Beta values of loci whose detection
 p values were > 0.01 were assigned NA in the output file. All loci
 are annotated with the EPIC Manifest from
-`MethylationEPIC\_v-1-0\_B2.csv` from the zip archive
+`MethylationEPIC_v-1-0_B2.csv` from the zip archive
 `infinium-methylationepic-v1-0-b2-manifest-file-csv.zip` from [Illumina](www.illumina.com) through the `IlluminaHumanMethylationEPICanno.ilm10b2.hg19` package on Bioconductor.
 
 To map EPIC arrays to GRCh38 assembly, all probe are reannotated by annotation 
