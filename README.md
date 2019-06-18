@@ -58,7 +58,7 @@ large cancer studies.” Genome Biology 15 (503):1–17
 Sample nomenclature
 -------------------
 
-The samples follow the naming system "\[SubjectID\].\[T , N, or A\].\[SampleID\].csv",
+The samples follow the naming system `[SubjectID].[T , N, or A].[SampleID].csv`,
 where T, N, or A specifies whether it is a tumor, blood normal or a tissue normal sample (for
 example: C3N-01375.T.CPTXXXXXXXXXX.csv). SampleID is a unique
 identifier of the sample.
