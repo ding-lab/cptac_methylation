@@ -10,7 +10,7 @@ Release
 *Jun 19, 2019* Version 1.1 released.
         - Reannotated probe by `InfiniumAnnotation` (Ref 2).
         - Improved filenaming: Adjacent normal were named as .A. Blood normal were named as .N.
-        - Improved filenaming: Unique aliquout ID were added.
+        - Improved filenaming: Unique sample ID were added.
 *May 30, 2018* Version 1.0 released.
         - Probe annotation were liftover to hg38
 
@@ -57,15 +57,10 @@ large cancer studies.” Genome Biology 15 (503):1–17
 Sample nomenclature
 -------------------
 
-The samples follow the naming system "\[SubjectID\].\[T or N\].csv",
-where T or N specifies whether it is a tumor or a normal sample (for
-example: C3N\_01375.T.csv). In a few cases, where this information was
-unavailable or unclear, the samples are named as
-"\[SampleID\].\[AliquotNumber\].csv", where SampleID is a unique
-identifier of the sample and the AliquotNumber is the aliquot which was
-processed for the methylation array (for example: CPT0018570006.2.csv).
-In most cases, the AliquotNumber is 2. Those samples which are labeled
-"NA12878" are controls where DNA from the cell line NA12878 was used.
+The samples follow the naming system "\[SubjectID\].\[T , N, or A\].\[SampleID\].csv",
+where T, N, or A specifies whether it is a tumor, blood normal or a tissue normal sample (for
+example: C3N-01375.T.CPTXXXXXXXXXX.csv). SampleID is a unique
+identifier of the sample.
 
 
 Column headding

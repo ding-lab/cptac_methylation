@@ -90,10 +90,15 @@ annEPICSub <- annEPIC[match(rownames(bVals),annEPIC$Name),
                       
 for (i in 1:ncol(bVals)) {
 	temp <- as.data.frame(bVals[,i])
+        print(temp)
 	samp <- colnames(bVals)[i]
+        print(samp)
 	temp <- merge(temp, annEPICSub, by="row.names")
+        print(temp)
 	colnames(temp)[1:2] <- c("Locus", "Beta")
 	index <- which(targets$Sample_ID == colnames(bVals)[i])
+        print(index)
+        print(targets$Sample_type[index])
 	if (targets$Sample_type[index] == "tumor") {
 		status = "T"} else if(targets$Sample_type[index] == "blood_normal") {
 		status = "N"} else if (targets$Sample_type[index] == "tissue_normal") {
