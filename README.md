@@ -66,6 +66,10 @@ identifier of the sample.
 
 Column headding
 -------------------
+
+Column headding of output file is listed below. 
+
+
 | Column                                | Content from Illumina EPIC Manifest                                                               | Status  | Replacement              | Content from InfiniumAnnotation                                                                                                                      |
 | ----                                  | ----                                                                                              | ----    | ---                      | ---                                                                                                                                                  |
 | Locus                                 | The IlmnID                                                                                        | Keep    | -                        | -                                                                                                                                                    |
