@@ -46,7 +46,6 @@ information from [InfiniumAnnotation](http://zwdzwd.github.io/InfiniumAnnotation
 2. Remapping the probes with GRCh38 information from `InfiniumAnnotation` using script `remapping.py`.
 3. Replacing the annotation in output files with the new annotation `anno/annotation_remap_hg38.txt` generated in step 2. Refer to script cptac_methylation_liftover.R.
 
-
 Reference
 ---------
 1. Fortin, JP, Aurélie Labbe, Mathieu Lemire, and BW Zanke. 2014. “Functional
