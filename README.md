@@ -16,6 +16,26 @@ Release
 - Probe annotation were liftover to hg38
 
 
+Run pipeline
+-----------------
+
+
+```
+## Get file description from github and set up environment 
+wget https://raw.githubusercontent.com/ding-lab/CPTAC3.catalog/master/CPTAC3.Catalog.dat
+conda env creat -f methyl-pipeline.yml
+source activate methyl-pipeline
+
+## Make input
+python make_pipeline_input.py ${Path to processing folder}
+
+## Pipeline
+tmux new-session -d -s methylation "source activate methyl-pipeline; Rscript cptac_methylation_v1.1.R ${Path to processing folder}"
+
+tmux new-session -d -s methylation "source activate methyl-pipeline; Rscript cptac_methylation_liftover.R ${Path to processing folder}"
+```
+
+
 Processing description
 ----------------------
 
