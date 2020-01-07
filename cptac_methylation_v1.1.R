@@ -103,7 +103,9 @@ for (i in 1:ncol(bVals)) {
 		status = "T"} else if(targets$Sample_type[index] == "blood_normal") {
 		status = "N"} else if (targets$Sample_type[index] == "tissue_normal") {
                 status = "A"}
-	write.csv(temp, paste0(WORKDIR, "/Processed/", targets$Subject_ID[index],".", status, ".", targets$Sample_ID ,".csv"), row.names=F)
+        filename <- paste0(WORKDIR, "/Processed/", targets$Subject_ID[index],".", status, ".", targets$Sample_ID ,".csv")[index]
+        print(filename)
+	write.csv(temp, file = filename, row.names=F)
 	}
 
 write.csv(detP, paste0(WORKDIR, "/Processed/", "Probewise_pValues.csv"))

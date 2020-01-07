@@ -5,6 +5,8 @@
 ### description: Lifts over processed methylation files from hg19 to hg38
 #########################################################################################
 
+library(data.table)
+
 ###----Process arguments------------------------------------------------------------------
 
 args = commandArgs(trailingOnly=TRUE)
@@ -23,7 +25,7 @@ dir.create(file.path(WORKDIR, "../Processed_hg38_remap"))
 
 ###----Read in hg38 annotation -----------------------------------------------------------
 
-ann <- read.csv("/diskmnt/Projects/Users/wliang/Methylome_CPTAC/04_Pipeline/00_Scripts/annotation_remap_hg38.txt", stringsAsFactors=F, sep= "\t")
+ann <- read.csv("/diskmnt/Projects/Users/wliang/CPTAC_Pancan_Methylation/annotation_remap_hg38.txt", stringsAsFactors=F, sep= "\t")
 
 ###----Change annotation information for all output files --------------------------------
 
