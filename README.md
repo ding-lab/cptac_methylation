@@ -28,7 +28,7 @@ conda env creat -f methyl-pipeline.yml
 conda activate methyl-pipeline
 
 ## Make input
-python make_pipeline_input.py ${Path to processing folder}
+python make_pipeline_input.py ${Path to processing folder} ${Batch_name} ${TXT with file names and UUID}
 
 ## Softlink IDAT files
 for i in `cat ../katmai.BamMap.dat | grep Methylation | awk -F "\t" '{OFS="\t"; print $6}'`; do ln -s $i ${Path to processing folder}; done
@@ -36,7 +36,7 @@ for i in `cat ../katmai.BamMap.dat | grep Methylation | awk -F "\t" '{OFS="\t"; 
 ## Pipeline
 tmux new-session -d -s methylation "source activate methyl-pipeline; Rscript cptac_methylation_v1.1.R ${Path to processing folder} |& tee tmux.methylation.log"
 
-tmux new-session -d -s methylation "source activate methyl-pipeline; Rscript cptac_methylation_liftover.R ${Path to processing folder} |& tee tmux.mapping.log"
+tmux new-session -d -s remapping "source activate methyl-pipeline; Rscript cptac_methylation_liftover.R ${Path to processing folder}/Processed |& tee tmux.mapping.log"
 ```
 
 
