@@ -87,14 +87,16 @@ for(i in 1:ncol(detP)) {
 
 annEPICSub <- annEPIC[match(rownames(bVals),annEPIC$Name),
                       c(1:4,12:19,24:ncol(annEPIC))]
-                      
+annEPICSub_clean <- annEPICSub[grepl("^cg", rownames(annEPICSub))==T,]                   
 for (i in 1:ncol(bVals)) {
 	temp <- as.data.frame(bVals[,i])
-        print(temp)
+        print("Convert to dataframe")
 	samp <- colnames(bVals)[i]
-        print(samp)
-	temp <- merge(temp, annEPICSub, by="row.names")
-        print(temp)
+        print("Extract column name")
+        print(head(temp))
+        print(head(annEPICSub_clean))
+	temp <- merge(temp, annEPICSub_clean, by="row.names")
+        print("Combine dataframe with probe name")
 	colnames(temp)[1:2] <- c("Locus", "Beta")
 	index <- which(targets$Sample_ID == colnames(bVals)[i])
         print(index)

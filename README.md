@@ -23,8 +23,9 @@ Run pipeline
 ```
 ## Get file description from github and set up environment 
 wget https://raw.githubusercontent.com/ding-lab/CPTAC3.catalog/master/CPTAC3.Catalog.dat
+wget https://raw.githubusercontent.com/ding-lab/CPTAC3.catalog/master/BamMap/katmai.BamMap.dat
 conda env creat -f methyl-pipeline.yml
-source activate methyl-pipeline
+conda activate methyl-pipeline
 
 ## Make input
 python make_pipeline_input.py ${Path to processing folder}
