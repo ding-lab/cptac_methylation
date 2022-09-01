@@ -3,9 +3,15 @@ CPTAC Methylation analysis
 
 #### Author: Sunantha Sethuraman
 #### Author: Wen-Wei Liang
+#### Author: Yizhe Song
 
 Release
 --------------
+
+* Feb 22, 2022: Version 1.2 released.
+- Improved filenaming: Adjacent normal were named as `.A`; Blood normal were named as `.N`;
+tumor_bone_marrow were names as `.Tbm`; tumor_peripheral_blood were named as `.Tpb`;recurrent_tumor were named as `.R`;
+- Improved filenaming: Unique #RunName were added.
 
 *Jun 19, 2019:* Version 1.1 released.
 - Reannotated probe by `InfiniumAnnotation` (Ref 2).
